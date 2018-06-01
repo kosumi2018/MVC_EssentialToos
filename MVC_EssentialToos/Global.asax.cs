@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Data.SqlClient;
+using MVC_EssentialToos.Infrastructure;
+using Ninject;
+using MVC_EssentialToos.App_Start;
 
 namespace MVC_EssentialToos
 {
@@ -14,6 +17,7 @@ namespace MVC_EssentialToos
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            NinjectWebCommon.RegisterServices(new StandardKernel());
         }
     }
 }
